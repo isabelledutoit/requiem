@@ -511,8 +511,8 @@
             background: var(--dark-mid);
             border: 1px solid var(--brown);
             border-top: 2px solid var(--blood);
-            padding: 3rem 2.5rem;
-            min-height: 340px;
+            padding: 2rem 2.5rem;
+            min-height: 160px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -637,9 +637,11 @@
             font-size: 0.8rem;
             letter-spacing: 0.18em;
             color: var(--bone-faint);
-            opacity: 0.75;
+            opacity: 0.85;
             margin-top: 1.8rem;
             text-transform: uppercase;
+            white-space: nowrap;
+            text-shadow: 0 0 8px rgba(160, 125, 48, 0.7), 0 0 20px rgba(160, 125, 48, 0.35);
         }
 
         /* ── FOOTER ── */
@@ -680,6 +682,34 @@
             text-transform: uppercase;
         }
 
+        /* ── AUDIO TOGGLE ── */
+        #audio-toggle {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 50;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(58, 37, 16, 0.6);
+            background: rgba(21, 16, 10, 0.75);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            color: var(--bone-faint);
+            cursor: pointer;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        #audio-toggle:hover {
+            border-color: var(--blood);
+            color: var(--bone);
+        }
+
+        #icon-unmuted { display: none; }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             .slide {
@@ -696,6 +726,23 @@
 <body>
 
 <canvas id="bg-canvas"></canvas>
+
+<audio id="bg-audio" preload="none" loop>
+    <source src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Gymnopedie_No._1_%28ISRC_USUAN1100787%29.mp3" type="audio/mpeg">
+</audio>
+
+<button type="button" id="audio-toggle" aria-label="Play background music" title="Play music">
+    <svg id="icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/>
+        <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+    <svg id="icon-unmuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+</button>
 
 <!-- ═══════════════════════════════════ HERO -->
 <section id="hero">
@@ -856,6 +903,35 @@
 </footer>
 
 <script>
+/* ══════════════════════════════════════════════
+   AUDIO TOGGLE
+══════════════════════════════════════════════ */
+(function () {
+    const audio   = document.getElementById('bg-audio');
+    const btn     = document.getElementById('audio-toggle');
+    const iconOn  = document.getElementById('icon-unmuted');
+    const iconOff = document.getElementById('icon-muted');
+    let started   = false;
+
+    audio.volume = 0.35;
+
+    btn.addEventListener('click', () => {
+        if (!started) {
+            audio.play().catch(() => {});
+            audio.muted = false;
+            started = true;
+        } else {
+            audio.muted = !audio.muted;
+        }
+        const muted = !started || audio.muted;
+        iconOff.style.display = muted  ? ''      : 'none';
+        iconOn.style.display  = !muted ? 'block' : 'none';
+        btn.setAttribute('aria-label', muted ? 'Play background music' : 'Mute background music');
+        btn.setAttribute('title',      muted ? 'Play music'            : 'Mute music');
+    });
+})();
+
+
 /* ══════════════════════════════════════════════
    BOUNCING BALLS — subtle slow physics
 ══════════════════════════════════════════════ */
