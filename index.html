@@ -66,15 +66,12 @@
         }
 
         .hero-byline {
-            position: absolute;
-            top: 2.5rem;
-            left: 50%;
-            transform: translateX(-50%);
             font-size: 32px;
             letter-spacing: 0.35em;
             color: var(--bone);
             text-transform: uppercase;
             white-space: nowrap;
+            margin-bottom: 1.1rem;
         }
 
         .hero-kicker {
@@ -703,7 +700,7 @@
 <!-- ═══════════════════════════════════ HERO -->
 <section id="hero">
     <div class="hero-byline">Isabelle du Toit</div>
-    <div class="hero-kicker">A Series in Mourning</div>
+    <div class="hero-kicker">An Elegy for Suffering</div>
     <h1 class="hero-title">Requiem</h1>
     <p class="hero-sub">Hyperrealist meditations on matter,<br>memory, and what refuses to disappear</p>
     <div class="scroll-hint">
@@ -798,13 +795,13 @@
     </div>
 
     <div class="slide-nav">
-        <button class="slide-arrow" id="prev-btn" aria-label="Previous">&#8592;</button>
+        <button type="button" class="slide-arrow" id="prev-btn" aria-label="Previous">&#8592;</button>
         <div class="slide-dots">
             <div class="slide-dot active" data-idx="0"></div>
             <div class="slide-dot" data-idx="1"></div>
             <div class="slide-dot" data-idx="2"></div>
         </div>
-        <button class="slide-arrow" id="next-btn" aria-label="Next">&#8594;</button>
+        <button type="button" class="slide-arrow" id="next-btn" aria-label="Next">&#8594;</button>
     </div>
 
 </section>
@@ -826,19 +823,19 @@
     <p class="pill-hint">Each token is a concept in disguise &nbsp;·&nbsp; click to decode</p>
 
     <div class="word-pills">
-        <button class="pill" data-word="Greed"        data-mask="#38659">#38659</button>
-        <button class="pill" data-word="Apathy"       data-mask="#12670">#12670</button>
-        <button class="pill" data-word="Selfishness"  data-mask="#12896">#12896</button>
-        <button class="pill" data-word="Manipulation" data-mask="#8716">#8716</button>
-        <button class="pill" data-word="Oppression"   data-mask="#19234">#19234</button>
-        <button class="pill" data-word="Deception"    data-mask="#22345">#22345</button>
-        <button class="pill" data-word="Death"        data-mask="#27891">#27891</button>
-        <button class="pill" data-word="Cruelty"      data-mask="#34012">#34012</button>
+        <button type="button" class="pill" data-word="Greed"        data-mask="#38659">#38659</button>
+        <button type="button" class="pill" data-word="Apathy"       data-mask="#12670">#12670</button>
+        <button type="button" class="pill" data-word="Selfishness"  data-mask="#12896">#12896</button>
+        <button type="button" class="pill" data-word="Manipulation" data-mask="#8716">#8716</button>
+        <button type="button" class="pill" data-word="Oppression"   data-mask="#19234">#19234</button>
+        <button type="button" class="pill" data-word="Deception"    data-mask="#22345">#22345</button>
+        <button type="button" class="pill" data-word="Death"        data-mask="#27891">#27891</button>
+        <button type="button" class="pill" data-word="Cruelty"      data-mask="#34012">#34012</button>
     </div>
 
     <div class="custom-wrap">
         <input type="text" id="custom-word" placeholder="or enter your own word…" maxlength="40" autocomplete="off">
-        <button class="dissect-btn" id="dissect-btn">Dissect</button>
+        <button type="button" class="dissect-btn" id="dissect-btn">Dissect</button>
     </div>
 
     <div id="tok-stage">
@@ -927,7 +924,7 @@
                 const d = Math.sqrt(dx * dx + dy * dy);
                 if (d < LINK_DIST) {
                     const alpha = (1 - d / LINK_DIST) * 0.8;
-                    ctx.strokeStyle = `rgba(210, 210, 215, ${alpha})`;
+                    ctx.strokeStyle = `rgba(140, 140, 145, ${alpha})`;
                     ctx.beginPath();
                     ctx.moveTo(a.x, a.y);
                     ctx.lineTo(b.x, b.y);
