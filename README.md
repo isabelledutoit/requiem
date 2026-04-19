@@ -27,8 +27,8 @@ docs/design-ideas.md    design interview + decisions
 ## Design Language
 
 - **Font**: Patrick Hand (Google Fonts), throughout
-- **Palette**: dead dark brown `#15100a`, bone `#f5f0e5`, blood red `#c41e1e`, gold `#a07d30`
-- **Background**: slow bouncing orb physics on canvas
+- **Palette**: dead dark brown `#15100a`, bone `#f5f0e5`, blood red `#c41e1e`, gold `#a07d30` (accents only)
+- **Background**: blood-red and silver orbs on canvas — slow physics, connected by thin silver constellation lines when within 180px
 - **Mood**: funerary · visceral · hyperrealist
 
 ## Sections

@@ -867,12 +867,12 @@
     const ctx = canvas.getContext('2d');
 
     const COLORS = [
+        [196, 30, 30],   // blood bright
+        [168, 24, 24],   // blood mid
         [138, 20, 20],   // blood
-        [88,  50, 20],   // warm brown
-        [120, 28, 28],   // mid blood
-        [160, 80, 28],   // rust
-        [70,  38, 14],   // deep brown
-        [110, 18, 18],   // dark blood
+        [130, 130, 135], // silver
+        [105, 105, 110], // silver dim
+        [85,  85,  90],  // silver dark
     ];
 
     let balls = [];
@@ -903,16 +903,41 @@
         }
     }
 
+    const LINK_DIST = 180;
+
     function tick() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        /* move + wall bounce */
         for (const b of balls) {
             b.x += b.vx;
             b.y += b.vy;
-            if (b.x - b.r < 0)               { b.x  = b.r;                 b.vx *= -1; }
-            if (b.x + b.r > canvas.width)     { b.x  = canvas.width - b.r;  b.vx *= -1; }
-            if (b.y - b.r < 0)               { b.y  = b.r;                 b.vy *= -1; }
-            if (b.y + b.r > canvas.height)    { b.y  = canvas.height - b.r; b.vy *= -1; }
+            if (b.x - b.r < 0)               { b.x = b.r;                 b.vx *= -1; }
+            if (b.x + b.r > canvas.width)     { b.x = canvas.width  - b.r; b.vx *= -1; }
+            if (b.y - b.r < 0)               { b.y = b.r;                 b.vy *= -1; }
+            if (b.y + b.r > canvas.height)    { b.y = canvas.height - b.r; b.vy *= -1; }
+        }
 
+        /* thin connecting lines — drawn first, under the orbs */
+        ctx.lineWidth = 1.1;
+        for (let i = 0; i < balls.length; i++) {
+            for (let j = i + 1; j < balls.length; j++) {
+                const a = balls[i], b = balls[j];
+                const dx = a.x - b.x, dy = a.y - b.y;
+                const d = Math.sqrt(dx * dx + dy * dy);
+                if (d < LINK_DIST) {
+                    const alpha = (1 - d / LINK_DIST) * 0.8;
+                    ctx.strokeStyle = `rgba(210, 210, 215, ${alpha})`;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        /* orbs on top */
+        for (const b of balls) {
             ctx.save();
             ctx.filter = `blur(${b.blur}px)`;
             ctx.beginPath();
@@ -921,6 +946,7 @@
             ctx.fill();
             ctx.restore();
         }
+
         requestAnimationFrame(tick);
     }
 
