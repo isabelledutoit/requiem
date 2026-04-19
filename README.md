@@ -1,5 +1,9 @@
 # Requiem — Isabelle du Toit
 
+## 🔗 [isabelledutoit.vercel.app](https://isabelledutoit.vercel.app)
+
+---
+
 A single-page landing site for Isabelle du Toit's **Requiem** series. Standalone from her main portfolio at [isabelledutoit.com](https://isabelledutoit.com).
 
 The site pairs hyperrealist painting with an interactive tokenizer: each painting carries a cryptic token number (painted directly on the canvas); visitors discover the concept behind it by clicking.
@@ -79,7 +83,9 @@ The eight pre-computed concepts are: Greed, Apathy, Selfishness, Manipulation, O
 
 ## Links
 
+- **Live site** — [isabelledutoit.vercel.app](https://isabelledutoit.vercel.app)
 - Isabelle du Toit — [isabelledutoit.com](https://isabelledutoit.com)
 - Requiem series — [isabelledutoit.com/requiem](https://isabelledutoit.com/requiem)
+- GitHub (Isabelle) — [github.com/isabelledutoit/requiem](https://github.com/isabelledutoit/requiem)
 
 © Isabelle du Toit. All rights reserved.
