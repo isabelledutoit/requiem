@@ -89,3 +89,7 @@ The eight pre-computed concepts are: Greed, Apathy, Selfishness, Manipulation, O
 - GitHub (Isabelle) — [github.com/isabelledutoit/requiem](https://github.com/isabelledutoit/requiem)
 
 © Isabelle du Toit. All rights reserved.
+
+## Support
+
+If this project helps you, you can support DreamForge Academy here: [Buy Me a Coffee](https://buymeacoffee.com/dreamforgeacademy).
