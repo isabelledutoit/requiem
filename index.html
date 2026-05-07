@@ -681,15 +681,15 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            padding: 5rem 2rem 4rem;
+            padding: 2rem 2rem 4rem;
             border-top: 1px solid var(--brown);
         }
 
         .footer-rule {
             width: 1px;
-            height: 48px;
+            height: 32px;
             background: linear-gradient(to bottom, var(--blood), transparent);
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 1.5rem;
         }
 
         footer a {
@@ -734,6 +734,26 @@
             opacity: 0.55 !important;
             font-size: 0.72rem !important;
             letter-spacing: 0.32em !important;
+        }
+
+        .footer-credit a,
+        .footer-copy a {
+            display: inline !important;
+            margin: 0 !important;
+            font-size: inherit !important;
+            letter-spacing: inherit !important;
+            text-transform: inherit !important;
+            color: var(--bone-dim);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(160, 125, 48, 0.4);
+            padding-bottom: 1px;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .footer-credit a:hover,
+        .footer-copy a:hover {
+            color: var(--bone);
+            border-color: var(--blood-bright);
         }
 
         /* ── AUDIO TOGGLE ── */
@@ -994,8 +1014,8 @@
         </svg>
         github.com/isabelledutoit/requiem
     </a>
-    <p>&copy; 2026 Isabelle du Toit &nbsp;·&nbsp; All rights reserved</p>
-    <p class="footer-credit">Built by AI &nbsp;·&nbsp; Steered by Emile du Toit (Husband &amp; Collaborator)</p>
+    <p class="footer-copy">&copy; 2026 <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener">Isabelle du Toit</a> &nbsp;·&nbsp; All rights reserved</p>
+    <p class="footer-credit">Built by AI &nbsp;·&nbsp; Steered by <a href="https://dreamforgeworld.com" target="_blank" rel="noopener">Emile du Toit</a> (Husband &amp; Collaborator)</p>
 </footer>
 
 <script>
