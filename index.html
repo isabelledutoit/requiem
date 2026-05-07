@@ -815,6 +815,40 @@
             max-width: 44ch;
         }
 
+        /* QR card — modest, sits next to the GitHub card */
+        .footer-qr {
+            display: inline-block;
+            margin: 0 0.6rem 1.5rem;
+            padding: 0.6rem 0.6rem 0.45rem;
+            border: 1.5px solid var(--brown-mid);
+            border-radius: 8px;
+            background: var(--bone);
+            text-align: center;
+            vertical-align: top;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+
+        .footer-qr:hover {
+            border-color: var(--blood);
+            transform: translateY(-1px);
+        }
+
+        .footer-qr img {
+            display: block;
+            width: 96px;
+            height: 96px;
+            margin: 0 auto;
+        }
+
+        .footer-qr-caption {
+            margin: 0.45rem 0 0 !important;
+            font-size: 0.62rem !important;
+            letter-spacing: 0.24em !important;
+            color: var(--brown-mid) !important;
+            opacity: 0.85 !important;
+            text-transform: uppercase !important;
+        }
+
         footer p {
             font-size: 0.8rem;
             letter-spacing: 0.2em;
@@ -1450,6 +1484,11 @@
     <div class="footer-rule"></div>
     <a href="https://isabelledutoit.com" target="_blank" rel="noopener">isabelledutoit.com</a>
     <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener">View the full Requiem series &rarr;</a>
+    <a href="https://isabelledutoit.com" target="_blank" rel="noopener" class="footer-qr" aria-label="QR code to isabelledutoit.com">
+        <img src="public/isabelledutoit_qr.png" alt="" loading="lazy">
+        <p class="footer-qr-caption">Scan to visit</p>
+    </a>
+
     <div class="footer-card">
         <p class="footer-card-note">GitHub hosts the source code of this site, open for anyone to read.</p>
         <a href="https://github.com/isabelledutoit/requiem" target="_blank" rel="noopener" class="footer-github" aria-label="View source on GitHub">
