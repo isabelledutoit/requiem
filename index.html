@@ -1478,7 +1478,7 @@
 
     function togglePause() {
         paused = !paused;
-        iconPause.style.display = paused ? 'none' : '';
+        iconPause.style.display = paused ? 'none' : 'block';
         iconPlay.style.display  = paused ? 'block' : 'none';
         pauseBtn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
         pauseBtn.setAttribute('title',      paused ? 'Play'           : 'Pause');
