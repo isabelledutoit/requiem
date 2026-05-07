@@ -24,7 +24,7 @@ Then visit `http://localhost:8000`.
 
 ```
 index.html              single-file page — all CSS, JS, HTML
-public/artworks/        paintings (placeholder: memento.webp)
+public/artworks/        paintings (Mentes Extractae — full + 3 details)
 docs/design-ideas.md    design interview + decisions
 ```
 
@@ -39,7 +39,7 @@ docs/design-ideas.md    design interview + decisions
 
 1. **Hero** — ISABELLE DU TOIT / REQUIEM
 2. **About** — series statement
-3. **Slideshow** — full-screen cinematic, three works, auto-advance every 7s
+3. **Slideshow** — full-screen cinematic, four views (Mentes Extractae + details), auto-advance every 7s
 4. **Tokenizer** — scroll-triggered reveal; 8 masked concept pills + custom input
 5. **Footer** — links back to isabelledutoit.com
 
@@ -55,15 +55,16 @@ Current cipher assignments:
 
 | Slide | Cipher | Concept |
 |-------|--------|---------|
-| 01 Memento | `#27891` | Death |
+| 01 Mentes Extractae | `#27891` | Death |
 | 02 The Wound Does Not Heal | `#34012` | Cruelty |
 | 03 Evidence | `#22345` | Deception |
+| 04 [Title TBD] | `#19234` | Oppression |
 
 Isabelle can paint any of the eight token IDs directly onto a work; visitors who arrive here will find the match and decode it.
 
 ## Updating Paintings
 
-Swap the image on any slide by changing the `src` on its `<img>` element. All three currently point at `public/artworks/memento.webp` as a placeholder.
+Swap the image on any slide by changing the `src` on its `<img>` element. The slides currently point at `MentesFull.jpg` and `MentesDetail1/2/3.jpg` in `public/artworks/`.
 
 ```html
 <div class="slide-art">

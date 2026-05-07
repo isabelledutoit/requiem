@@ -24,8 +24,8 @@ Greed · Apathy · Selfishness · Manipulation · Oppression · Deception · Dea
 
 ## Image Notes
 
-- Placeholder: `public/artworks/memento.webp` (Isabelle's existing work)
-- Final Requiem painting (main focus) to be swapped in when complete
+- Featured work: **Mentes Extractae** — `public/artworks/MentesFull.jpg` plus three detail crops (`MentesDetail1.jpg`, `MentesDetail2.jpg`, `MentesDetail3.jpg`)
+- Slideshow shows the full painting first, then details across slides 2–4
 - All images link back to isabelledutoit.com/requiem
 
 ## Page Structure
