@@ -765,16 +765,9 @@
         .footer-github:hover svg { transform: scale(1.08); }
 
         /* GitHub repo card with explanation */
-        @property --card-beacon {
-            syntax: '<angle>';
-            initial-value: 0deg;
-            inherits: false;
-        }
-
         .footer-card {
             display: inline-block;
             position: relative;
-            isolation: isolate;
             margin: 0 auto 1.5rem;
             padding: 1.4rem 2rem 1.2rem;
             border: 2px solid var(--blood);
@@ -784,27 +777,27 @@
             text-align: center;
         }
 
+        /* small red dot that loops around the perimeter */
         .footer-card::before {
             content: '';
             position: absolute;
-            inset: -5px;
-            z-index: -1;
-            border-radius: 16px;
-            background: conic-gradient(
-                from var(--card-beacon),
-                transparent 0deg,
-                var(--blood-bright) 50deg,
-                var(--blood-mid) 90deg,
-                transparent 140deg,
-                transparent 360deg
-            );
-            filter: blur(7px);
-            opacity: 0.85;
-            animation: cardBeacon 4s linear infinite;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--blood-bright);
+            box-shadow: 0 0 8px var(--blood-bright),
+                        0 0 16px rgba(196, 30, 30, 0.6);
+            pointer-events: none;
+            /* Trace the card's rounded-rectangle border path */
+            offset-path: rect(0 100% 100% 0 round 12px);
+            offset-distance: 0%;
+            animation: cardOrbit 5s linear infinite;
         }
 
-        @keyframes cardBeacon {
-            to { --card-beacon: 360deg; }
+        @keyframes cardOrbit {
+            to { offset-distance: 100%; }
         }
 
         .footer-card .footer-github {
