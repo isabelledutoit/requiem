@@ -65,6 +65,10 @@ Current cipher assignments:
 | 02 Evidence | `#34012` | Cruelty |
 | 03 The Wound Does Not Heal | `#22345` | Deception |
 | 04 Extracted Minds | `#19234` | Oppression |
+| 05 …coming soon… | `#38659` | Greed |
+| 06 …coming soon… | `#12670` | Apathy |
+| 07 …coming soon… | `#12896` | Selfishness |
+| 08 …coming soon… | `#8716` | Manipulation |
 
 Isabelle can paint any of the eight token IDs directly onto a work; visitors who arrive here will find the match and decode it.
 

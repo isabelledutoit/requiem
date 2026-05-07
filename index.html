@@ -764,6 +764,32 @@
 
         .footer-github:hover svg { transform: scale(1.08); }
 
+        /* GitHub repo card with explanation */
+        .footer-card {
+            display: inline-block;
+            margin: 0 auto 1.5rem;
+            padding: 1.3rem 1.8rem 1rem;
+            border: 1px solid var(--brown-mid);
+            background: rgba(21, 16, 10, 0.35);
+            max-width: calc(100% - 2rem);
+            text-align: center;
+        }
+
+        .footer-card .footer-github {
+            margin: 0 auto 0.65rem !important;
+        }
+
+        .footer-card-note {
+            margin: 0 auto !important;
+            font-size: 0.72rem !important;
+            letter-spacing: 0.12em !important;
+            color: var(--bone-faint) !important;
+            opacity: 0.75 !important;
+            text-transform: none !important;
+            line-height: 1.6 !important;
+            max-width: 42ch;
+        }
+
         footer p {
             font-size: 0.8rem;
             letter-spacing: 0.2em;
@@ -1236,6 +1262,86 @@
         </div>
     </div>
 
+    <div class="slide">
+        <div class="slide-art">
+            <img src="public/artworks/MentesFull.jpg" alt="Requiem (placeholder) — Isabelle du Toit" loading="lazy">
+        </div>
+        <div class="slide-info">
+            <div class="slide-num">05 — Requiem</div>
+            <h2 class="slide-title">…coming soon…</h2>
+            <p class="slide-desc">
+                A new work in the Requiem series. Title and description revealed when the painting is complete.
+            </p>
+            <div class="slide-cipher">
+                <span class="slide-cipher-label">Token on this work</span>
+                <button type="button" class="slide-cipher-btn" data-word="Greed" data-mask="#38659">#38659</button>
+            </div>
+            <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
+                View in Gallery &rarr;
+            </a>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-art">
+            <img src="public/artworks/MentesDetail1.jpg" alt="Requiem (placeholder) — Isabelle du Toit" loading="lazy">
+        </div>
+        <div class="slide-info">
+            <div class="slide-num">06 — Requiem</div>
+            <h2 class="slide-title">…coming soon…</h2>
+            <p class="slide-desc">
+                A new work in the Requiem series. Title and description revealed when the painting is complete.
+            </p>
+            <div class="slide-cipher">
+                <span class="slide-cipher-label">Token on this work</span>
+                <button type="button" class="slide-cipher-btn" data-word="Apathy" data-mask="#12670">#12670</button>
+            </div>
+            <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
+                View in Gallery &rarr;
+            </a>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-art">
+            <img src="public/artworks/MentesDetail2.jpg" alt="Requiem (placeholder) — Isabelle du Toit" loading="lazy">
+        </div>
+        <div class="slide-info">
+            <div class="slide-num">07 — Requiem</div>
+            <h2 class="slide-title">…coming soon…</h2>
+            <p class="slide-desc">
+                A new work in the Requiem series. Title and description revealed when the painting is complete.
+            </p>
+            <div class="slide-cipher">
+                <span class="slide-cipher-label">Token on this work</span>
+                <button type="button" class="slide-cipher-btn" data-word="Selfishness" data-mask="#12896">#12896</button>
+            </div>
+            <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
+                View in Gallery &rarr;
+            </a>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-art">
+            <img src="public/artworks/MentesDetail3.jpg" alt="Requiem (placeholder) — Isabelle du Toit" loading="lazy">
+        </div>
+        <div class="slide-info">
+            <div class="slide-num">08 — Requiem</div>
+            <h2 class="slide-title">…coming soon…</h2>
+            <p class="slide-desc">
+                A new work in the Requiem series. Title and description revealed when the painting is complete.
+            </p>
+            <div class="slide-cipher">
+                <span class="slide-cipher-label">Token on this work</span>
+                <button type="button" class="slide-cipher-btn" data-word="Manipulation" data-mask="#8716">#8716</button>
+            </div>
+            <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
+                View in Gallery &rarr;
+            </a>
+        </div>
+    </div>
+
     <div class="slide-nav">
         <button type="button" class="slide-arrow" id="prev-btn" aria-label="Previous">&#8592;</button>
         <div class="slide-dots">
@@ -1243,6 +1349,10 @@
             <div class="slide-dot" data-idx="1"></div>
             <div class="slide-dot" data-idx="2"></div>
             <div class="slide-dot" data-idx="3"></div>
+            <div class="slide-dot" data-idx="4"></div>
+            <div class="slide-dot" data-idx="5"></div>
+            <div class="slide-dot" data-idx="6"></div>
+            <div class="slide-dot" data-idx="7"></div>
         </div>
         <button type="button" class="slide-arrow" id="next-btn" aria-label="Next">&#8594;</button>
         <button type="button" class="slide-arrow" id="pause-btn" aria-label="Play slideshow" title="Play">
@@ -1315,12 +1425,15 @@
     <div class="footer-rule"></div>
     <a href="https://isabelledutoit.com" target="_blank" rel="noopener">isabelledutoit.com</a>
     <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener">View the full Requiem series &rarr;</a>
-    <a href="https://github.com/isabelledutoit/requiem" target="_blank" rel="noopener" class="footer-github" aria-label="View source on GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-1-.02-1.96-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.17a11 11 0 0 1 5.76 0c2.2-1.48 3.16-1.17 3.16-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.65.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.21.66.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
-        </svg>
-        github.com/isabelledutoit/requiem
-    </a>
+    <div class="footer-card">
+        <a href="https://github.com/isabelledutoit/requiem" target="_blank" rel="noopener" class="footer-github" aria-label="View source on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-1-.02-1.96-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.17a11 11 0 0 1 5.76 0c2.2-1.48 3.16-1.17 3.16-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.65.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.21.66.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+            github.com/isabelledutoit/requiem
+        </a>
+        <p class="footer-card-note">GitHub hosts the source code of this site, open for anyone to read.</p>
+    </div>
     <p class="footer-copy">&copy; 2026 <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener">Isabelle du Toit</a> &nbsp;·&nbsp; All rights reserved</p>
     <p class="footer-credit">Built by AI &nbsp;·&nbsp; Steered by <a href="https://dreamforgeworld.com" target="_blank" rel="noopener">Emile du Toit</a> (Husband &amp; Collaborator)</p>
 </footer>
