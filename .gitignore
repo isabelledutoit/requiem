@@ -3,6 +3,7 @@
 
 # Local-only test artifacts (Playwright screenshots, etc.)
 .shots/
+.playwright-mcp/
 
 # Environment / secrets
 .env
