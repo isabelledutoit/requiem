@@ -12,15 +12,19 @@ The site pairs hyperrealist painting with an interactive tokenizer: each paintin
 
 ## Running
 
-No build step. Open `index.html` in a browser, or serve the folder:
+No build step. Clone the repo, then either open `index.html` in a browser or serve the folder:
 
 ```bash
+git clone https://github.com/isabelledutoit/requiem.git
+cd requiem
 python -m http.server 8000
 # or
 npx serve .
 ```
 
 Then visit `http://localhost:8000`.
+
+> Internet is required for the Google Font (Patrick Hand) and the background audio. Images are local to the repo and work offline.
 
 ## Structure
 
