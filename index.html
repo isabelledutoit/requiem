@@ -893,16 +893,29 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            /* slideshow stacks vertically */
+            /* slideshow stacks vertically — content must fit in 100vh
+               above the absolute-positioned slide-nav */
             .slide {
                 flex-direction: column;
-                padding: 3rem 1.5rem 6rem;
-                gap: 2rem;
+                padding: 1.5rem 1.5rem 5.5rem;
+                gap: 1.2rem;
             }
-            .slide-art   { flex: none; width: 100%; height: 40vh; }
+            .slide-art   { flex: none; width: 100%; height: 30vh; }
             .slide-info  { flex: none; text-align: center; }
-            .slide-desc  { max-width: 100%; }
-            .slide-cipher { justify-content: center; flex-wrap: wrap; }
+            .slide-num   { margin-bottom: 0.8rem; }
+            .slide-title { margin-bottom: 1rem; }
+            .slide-desc  {
+                max-width: 100%;
+                font-size: 1.15rem;
+                line-height: 1.55;
+                margin-bottom: 1.4rem;
+            }
+            .slide-cipher {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.7rem;
+                margin-bottom: 1.2rem;
+            }
 
             /* hero — kill nowrap overflow, scale the title */
             #hero { padding: 12vh 1.25rem 2rem; }
@@ -948,7 +961,6 @@
             .hero-kicker { font-size: 0.78rem; }
 
             .about-text  { font-size: 1.1rem; }
-            .slide-desc  { font-size: 1.15rem; }
 
             .pill {
                 padding: 0.5rem 1.1rem;
@@ -956,9 +968,23 @@
                 min-width: 80px;
             }
 
-            .slide-num         { font-size: 0.78rem; }
-            .slide-cipher      { gap: 0.6rem; }
-            .slide-cipher-label{ font-size: 0.7rem; }
+            /* tighter slide so cipher + link fit above the nav */
+            .slide          { padding: 1.25rem 1rem 5rem; gap: 0.8rem; }
+            .slide-art      { height: 26vh; }
+            .slide-num      { font-size: 0.78rem; margin-bottom: 0.6rem; }
+            .slide-title    {
+                font-size: clamp(1.4rem, 6vw, 1.8rem);
+                margin-bottom: 0.7rem;
+            }
+            .slide-desc {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            }
+            .slide-cipher       { gap: 0.6rem; margin-bottom: 0.9rem; }
+            .slide-cipher-label { font-size: 0.7rem; }
+            .slide-cipher-btn   { padding: 0.3rem 0.85rem; font-size: 1rem; }
+            .slide-link         { font-size: 0.78rem; letter-spacing: 0.28em; }
 
             #lightbox-close { top: 1rem; right: 1rem; }
 

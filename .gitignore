@@ -1,6 +1,9 @@
 # Vercel
 .vercel
 
+# Local-only test artifacts (Playwright screenshots, etc.)
+.shots/
+
 # Environment / secrets
 .env
 .env.*
