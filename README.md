@@ -4,6 +4,8 @@
 
 ---
 
+![Mentes Extractae — Isabelle du Toit](public/artworks/MentesFull.jpg)
+
 A single-page landing site for Isabelle du Toit's **Requiem** series. Standalone from her main portfolio at [isabelledutoit.com](https://isabelledutoit.com).
 
 The site pairs hyperrealist painting with an interactive tokenizer: each painting carries a cryptic token number (painted directly on the canvas); visitors discover the concept behind it by clicking.
@@ -39,9 +41,9 @@ docs/design-ideas.md    design interview + decisions
 
 1. **Hero** — ISABELLE DU TOIT / REQUIEM
 2. **About** — series statement
-3. **Slideshow** — full-screen cinematic, four views (Mentes Extractae + details), auto-advance every 7s
+3. **Slideshow** — full-screen cinematic, four views (Mentes Extractae + details), paused by default; play/pause toggle advances every 5s
 4. **Tokenizer** — scroll-triggered reveal; 8 masked concept pills + custom input
-5. **Footer** — links back to isabelledutoit.com
+5. **Footer** — links to isabelledutoit.com, the Requiem series page, the GitHub repo, and the build credit
 
 ## The Cipher Mechanic
 
@@ -56,9 +58,9 @@ Current cipher assignments:
 | Slide | Cipher | Concept |
 |-------|--------|---------|
 | 01 Mentes Extractae | `#27891` | Death |
-| 02 The Wound Does Not Heal | `#34012` | Cruelty |
-| 03 Evidence | `#22345` | Deception |
-| 04 [Title TBD] | `#19234` | Oppression |
+| 02 Evidence | `#34012` | Cruelty |
+| 03 The Wound Does Not Heal | `#22345` | Deception |
+| 04 Extracted Minds | `#19234` | Oppression |
 
 Isabelle can paint any of the eight token IDs directly onto a work; visitors who arrive here will find the match and decode it.
 
