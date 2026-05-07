@@ -955,6 +955,105 @@
             }
         }
 
+        /* phones in landscape — short viewports regardless of width */
+        @media (max-height: 500px) and (orientation: landscape) {
+            /* HERO — title was colliding with the scroll line */
+            #hero { padding: 1.4rem 1.5rem 1rem; }
+            .hero-byline {
+                font-size: 0.95rem;
+                letter-spacing: 0.22em;
+                margin-bottom: 0.35rem;
+                white-space: normal;
+            }
+            .hero-kicker {
+                font-size: 0.7rem;
+                letter-spacing: 0.32em;
+                margin-bottom: 0.6rem;
+            }
+            .hero-title {
+                font-size: clamp(1.8rem, 9vh, 3rem);
+                letter-spacing: 0.15em;
+            }
+            .hero-title::after { margin: 0.5rem auto 0.5rem; height: 1px; }
+            .hero-title::before { display: none; }
+            .hero-sub {
+                font-size: 0.75rem;
+                margin-top: 0.7rem;
+                line-height: 1.5;
+                letter-spacing: 0.18em;
+            }
+            .scroll-hint { bottom: 0.6rem; gap: 0.25rem; }
+            .scroll-hint span { font-size: 0.62rem; letter-spacing: 0.32em; }
+            .scroll-mouse { width: 16px; height: 24px; }
+            .scroll-line { height: 22px; }
+
+            /* ABOUT */
+            #about { padding: 2rem 1.5rem 2.5rem; }
+            .about-text { font-size: 1rem; line-height: 1.6; }
+
+            /* SLIDESHOW — force side-by-side row even when width<768,
+               and use a tight typography scale so info fits */
+            .slide {
+                flex-direction: row !important;
+                padding: 1rem 1.5rem 3.6rem;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            .slide-art {
+                flex: 0 0 38%;
+                width: auto;
+                height: 65vh;
+            }
+            .slide-info {
+                flex: 1 1 auto;
+                text-align: left;
+            }
+            .slide-num {
+                font-size: 0.7rem;
+                letter-spacing: 0.35em;
+                margin-bottom: 0.35rem;
+            }
+            .slide-title {
+                font-size: clamp(1.1rem, 5.5vh, 1.7rem);
+                line-height: 1.1;
+                margin-bottom: 0.45rem;
+            }
+            .slide-desc {
+                font-size: 0.82rem;
+                line-height: 1.4;
+                margin-bottom: 0.55rem;
+                max-width: 100%;
+            }
+            .slide-cipher {
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+            }
+            .slide-cipher-label { font-size: 0.62rem; letter-spacing: 0.28em; }
+            .slide-cipher-btn   { padding: 0.22rem 0.7rem; font-size: 0.9rem; }
+            .slide-link         {
+                font-size: 0.68rem;
+                letter-spacing: 0.25em;
+                padding-bottom: 2px;
+            }
+            .slide-nav {
+                bottom: 0.7rem;
+                gap: 1rem;
+            }
+            .slide-arrow { width: 30px; height: 30px; font-size: 0.78rem; }
+
+            /* TOKENIZER */
+            #tokenizer { padding: 3rem 1.5rem 3rem; }
+            .tok-intro { margin-bottom: 2rem; }
+            .tok-intro h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+            .tok-intro p  { font-size: 1rem; line-height: 1.55; }
+
+            /* FOOTER */
+            footer { padding: 1.5rem 1.5rem 2rem; }
+            .footer-rule { height: 24px; margin: 0 auto 1rem; }
+        }
+
         /* small phones */
         @media (max-width: 480px) {
             .hero-byline { font-size: 1.15rem; letter-spacing: 0.18em; }
