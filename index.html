@@ -754,15 +754,29 @@
             align-items: center;
             gap: 0.7rem;
             margin: 0 auto 1.2rem;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: anywhere;
         }
 
         .footer-github svg {
             width: 18px;
             height: 18px;
+            flex-shrink: 0;
             transition: transform 0.3s;
         }
 
         .footer-github:hover svg { transform: scale(1.08); }
+
+        /* On phone-class viewports (any orientation) tighten the link's
+           inherited 0.4em letter-spacing so it can't punch past the card
+           edge under iOS text scaling or safe-area inset shrinkage. */
+        @media (max-width: 900px) {
+            .footer-card .footer-github {
+                font-size: 0.78rem !important;
+                letter-spacing: 0.18em !important;
+            }
+        }
 
         /* GitHub repo card with explanation */
         .footer-card {
