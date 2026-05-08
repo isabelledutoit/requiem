@@ -62,7 +62,7 @@
             align-items: center;
             justify-content: flex-start;
             text-align: center;
-            padding: 15vh 2rem 2rem;
+            padding: 10vh 2rem 2rem;
         }
 
         .hero-byline {
@@ -98,7 +98,7 @@
             width: 48px;
             height: 2px;
             background: var(--blood-mid);
-            margin: 1.6rem auto 1.8rem;
+            margin: 1.2rem auto 1.2rem;
             position: relative;
         }
 
@@ -121,13 +121,13 @@
         }
 
         .hero-sub {
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            letter-spacing: 0.2em;
+            font-size: clamp(0.85rem, 1.4vw, 1rem);
+            letter-spacing: 0.18em;
             color: var(--bone-dim);
             text-transform: uppercase;
-            line-height: 1.9;
-            max-width: 38ch;
-            margin-top: 3.6rem;
+            line-height: 1.75;
+            max-width: 70ch;
+            margin-top: 1.6rem;
         }
 
         .scroll-hint {
@@ -174,31 +174,12 @@
             animation: drip 2.4s ease-in-out infinite;
         }
 
-        /* ── ABOUT ── */
-        #about {
-            padding: 3rem 2rem 7rem;
-            max-width: 780px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
         .section-label {
             font-size: 0.85rem;
             letter-spacing: 0.5em;
             color: var(--blood-bright);
             text-transform: uppercase;
             margin-bottom: 2.2rem;
-        }
-
-        .about-text {
-            font-size: 1.65rem;
-            line-height: 1.9;
-            color: var(--bone-dim);
-        }
-
-        .about-text em {
-            color: var(--bone);
-            font-style: normal;
         }
 
         /* ── SLIDESHOW ── */
@@ -254,11 +235,11 @@
             filter: sepia(0.05) contrast(1.08) brightness(1.05);
         }
 
-        /* vignette over image */
+        /* vignette over image — inset so it doesn't dim the silver frame at the corners */
         .slide-art::after {
             content: '';
             position: absolute;
-            inset: 0;
+            inset: 1px;
             background: radial-gradient(ellipse at center, transparent 50%, var(--dark-mid) 100%);
             pointer-events: none;
         }
@@ -443,7 +424,7 @@
 
         /* ── TOKENIZER ── */
         #tokenizer {
-            padding: 9rem 2rem 8rem;
+            padding: 3rem 2rem 8rem;
             max-width: 860px;
             margin: 0 auto;
             opacity: 0;
@@ -459,6 +440,11 @@
         .tok-intro {
             text-align: center;
             margin-bottom: 4rem;
+        }
+
+        .tok-outro {
+            margin-top: 4rem;
+            margin-bottom: 0;
         }
 
         .tok-intro h2 {
@@ -685,7 +671,7 @@
             margin-top: 1rem;
         }
 
-        .phase-caption strong { color: var(--bone); }
+        .phase-caption strong { color: var(--bone); font-weight: inherit; }
 
         /* phase 3 — vector */
         .vec-dim-note {
@@ -1039,14 +1025,16 @@
                 font-size: clamp(2.6rem, 13vw, 5rem);
                 letter-spacing: 0.18em;
             }
-            .hero-sub { margin-top: 2.4rem; }
-
-            /* about */
-            #about { padding: 2.5rem 1.5rem 4rem; }
-            .about-text { font-size: 1.25rem; line-height: 1.75; }
+            .hero-sub {
+                margin-top: 1.2rem;
+                max-width: 32ch;
+                font-size: 0.78rem;
+                line-height: 1.65;
+                letter-spacing: 0.16em;
+            }
 
             /* tokenizer */
-            #tokenizer { padding: 5rem 1.25rem 5rem; }
+            #tokenizer { padding: 2rem 1.25rem 5rem; }
             .tok-intro p { font-size: 1.2rem; line-height: 1.7; }
             .custom-wrap {
                 flex-direction: column;
@@ -1086,19 +1074,16 @@
             .hero-title::after { margin: 0.5rem auto 0.5rem; height: 1px; }
             .hero-title::before { display: none; }
             .hero-sub {
-                font-size: 0.75rem;
-                margin-top: 0.7rem;
-                line-height: 1.5;
-                letter-spacing: 0.18em;
+                font-size: 0.62rem;
+                margin-top: 0.5rem;
+                line-height: 1.45;
+                letter-spacing: 0.14em;
+                max-width: 60ch;
             }
             .scroll-hint { bottom: 0.6rem; gap: 0.25rem; }
             .scroll-hint span { font-size: 0.62rem; letter-spacing: 0.32em; }
             .scroll-mouse { width: 16px; height: 24px; }
             .scroll-line { height: 22px; }
-
-            /* ABOUT */
-            #about { padding: 2rem 1.5rem 2.5rem; }
-            .about-text { font-size: 1rem; line-height: 1.6; }
 
             /* SLIDESHOW — force side-by-side row even when width<768,
                and use a tight typography scale so info fits */
@@ -1153,7 +1138,7 @@
             .slide-arrow { width: 30px; height: 30px; font-size: 0.78rem; }
 
             /* TOKENIZER */
-            #tokenizer { padding: 3rem 1.5rem 3rem; }
+            #tokenizer { padding: 1.25rem 1.5rem 3rem; }
             .tok-intro { margin-bottom: 2rem; }
             .tok-intro h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
             .tok-intro p  { font-size: 1rem; line-height: 1.55; }
@@ -1167,8 +1152,6 @@
         @media (max-width: 480px) {
             .hero-byline { font-size: 1.15rem; letter-spacing: 0.18em; }
             .hero-kicker { font-size: 0.78rem; }
-
-            .about-text  { font-size: 1.1rem; }
 
             .pill {
                 padding: 0.5rem 1.1rem;
@@ -1227,9 +1210,9 @@
 <!-- ═══════════════════════════════════ HERO -->
 <section id="hero">
     <div class="hero-byline">Isabelle du Toit</div>
-    <div class="hero-kicker">An Elegy for Suffering</div>
-    <h1 class="hero-title">Requiem</h1>
-    <p class="hero-sub">Hyperrealist meditations on matter,<br>memory, and what refuses to disappear</p>
+    <div class="hero-kicker">REQUIEM SERIES</div>
+    <h1 class="hero-title">Mentes Extractae</h1>
+    <p class="hero-sub">Mentes Extractae is a hybrid post digital artwork combining oil painting, symbolic ciphers, and web linked systems. I view trees as witnesses to human cruelty and failings. Through driftwood, brain fragments, and AI vectors, the work questions authorship and consciousness.</p>
     <div class="scroll-hint">
         <span>Scroll</span>
         <svg class="scroll-mouse" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
@@ -1240,19 +1223,6 @@
     </div>
 </section>
 
-<!-- ═══════════════════════════════════ ABOUT -->
-<section id="about">
-    <div class="section-label">The Series</div>
-    <p class="about-text">
-        In <em>Requiem</em>, Isabelle du Toit turns the hyperrealist gaze
-        toward objects that have outlasted their purpose —
-        driftwood bearing wounds, bone-pale forms concealing interior worlds,
-        surfaces that bleed without warning.
-        Each painting is an act of witness.
-        <em>A mourning that refuses sentiment.</em>
-    </p>
-</section>
-
 <!-- ═══════════════════════════════════ SLIDESHOW -->
 <section id="slideshow">
 
@@ -1261,18 +1231,16 @@
             <img src="public/artworks/MentesFull.jpg" alt="Mentes Extractae — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">01 — Requiem</div>
+            <div class="slide-num">01</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A hybrid post-digital work: pigment, cipher, and archive entwined.
-                The painted surface carries an inscribed token; the token opens
-                into a web-linked record. Matter and memory, bound across two worlds.
+                Extracted Minds — 91 x 121 cm (36 x 48 inches), oil on Canvas
             </p>
             <div class="slide-cipher">
                 <a href="#tokenizer" class="slide-cipher-btn slide-cipher-cta">Decode the Cipher &rarr;</a>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1282,20 +1250,18 @@
             <img src="public/artworks/34012.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">02 — Requiem</div>
+            <div class="slide-num">02</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                Trees as gentle witnesses — their branches and trunks bearing
-                the record of our cruelty and pain. To paint them this
-                precisely is to refuse forgetting. The red is not decoration;
-                it is proof.
+                The brain fragments represents extraction, and harvesting of
+                human knowledge and creativity.
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Cruelty" data-mask="#34012">#34012</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1305,20 +1271,19 @@
             <img src="public/artworks/22345.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">03 — Requiem</div>
+            <div class="slide-num">03</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A quiet extraction — creativity and knowledge taken without
-                consent or awareness. A slow erosion of authorship. The wound
-                does not heal; it widens into a question: who are we, and
-                what are we losing?
+                A deceiptful extraction — creativity and knowledge taken
+                without consent or awareness. A slow erosion of what it
+                means to be human.
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Deception" data-mask="#22345">#22345</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1328,18 +1293,19 @@
             <img src="public/artworks/19234.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">04 — Requiem</div>
+            <div class="slide-num">04</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A hybrid post-digital work: painting, symbolic encoding,
-                and web-linked archive bound into one.
+                The tokens and vectors are synthetic thought fragments
+                converted into coordinates and probabilities rather than
+                meaning in a cold multi dimensional vector space.
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Oppression" data-mask="#19234">#19234</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1349,17 +1315,17 @@
             <img src="public/artworks/38659.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">05 — Requiem</div>
+            <div class="slide-num">05</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A new work in the Requiem series. Title and description revealed when the painting is complete.
+                The driftwood remembers. It witnesses the cruelty and suffering woven through human history, holding echoes of our collective pain from the past into the future.
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Greed" data-mask="#38659">#38659</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1369,17 +1335,17 @@
             <img src="public/artworks/12670.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">06 — Requiem</div>
+            <div class="slide-num">06</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A new work in the Requiem series. Title and description revealed when the painting is complete.
+                Entering words into the system mirrors how human language becomes data inside AI systems.
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Apathy" data-mask="#12670">#12670</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1389,17 +1355,17 @@
             <img src="public/artworks/12896.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">07 — Requiem</div>
+            <div class="slide-num">07</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A new work in the Requiem series. Title and description revealed when the painting is complete.
+                The driftwood was found on a remote Florida beach after a hurricane.
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Selfishness" data-mask="#12896">#12896</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1409,17 +1375,17 @@
             <img src="public/artworks/8716.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">08 — Requiem</div>
+            <div class="slide-num">08</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A new work in the Requiem series. Title and description revealed when the painting is complete.
+                Rather than celebrating technology, Mentes Extractae examines the uneasy boundary between human thought and machine representation...
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Manipulation" data-mask="#8716">#8716</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1429,19 +1395,17 @@
             <img src="public/artworks/27891.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
-            <div class="slide-num">09 — Requiem</div>
+            <div class="slide-num">09</div>
             <h2 class="slide-title">Mentes Extractae</h2>
             <p class="slide-desc">
-                A hybrid post-digital work: pigment, cipher, and archive entwined.
-                The painted surface carries an inscribed token; the token opens
-                into a web-linked record. Matter and memory, bound across two worlds.
+                The work asks what may be lost when consciousness, memory, and artistic expression become data.
             </p>
             <div class="slide-cipher">
                 <span class="slide-cipher-label">Token on this work</span>
                 <button type="button" class="slide-cipher-btn" data-word="Death" data-mask="#27891">#27891</button>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View in Gallery &rarr;
+                View Full Requiem Series &rarr;
             </a>
         </div>
     </div>
@@ -1476,14 +1440,17 @@
 <!-- ═══════════════════════════════════ TOKENIZER -->
 <section id="tokenizer">
     <div class="tok-intro">
-        <div class="section-label">Language as Anatomy</div>
-        <h2>How a Machine Reads Grief</h2>
-        <div class="blood-rule"></div>
         <p>
-            An LLM does not read words whole. It dissects them —
-            breaking language into tokens, then mapping each fragment
-            into a vast numeric space called an embedding.
-            What Isabelle does to matter, the model does to meaning.
+            An LLM does not read words as complete units. It dissects
+            language into tokens, transforming fragments of meaning into
+            vectors that exist within vast multidimensional embedding
+            spaces. This companion digital site extends the artwork beyond
+            the physical object, allowing viewers to interact with hidden
+            ciphers, explore simplified vector spaces, and contribute their
+            own descriptive words into the system. In doing so, viewers
+            temporarily participate in the same processes of translation,
+            abstraction, and computational interpretation that increasingly
+            shape human knowledge, memory, and creativity.
         </p>
     </div>
 
@@ -1512,6 +1479,21 @@
     <p class="tok-footnote">
         Tokenization simulated · Embeddings pre-computed via text-embedding-3-small (1536 dims, first 32 shown)
     </p>
+
+    <div class="tok-intro tok-outro">
+        <p>
+            By placing the work inside her own public GitHub repository — a
+            widely used online platform where programmers store, share, and
+            collaborate on software code — Isabelle intentionally inserts the
+            artwork into the very ecosystem that powers contemporary AI and
+            software development. Like a Trojan horse, the project quietly
+            infiltrates the world of developers and technologists from within,
+            confronting fullstack developers with questions surrounding
+            authorship, extraction, consent, and the growing displacement
+            and appropriation of human creativity, their technical skills by
+            the systems being built to emulate them.
+        </p>
+    </div>
 </section>
 
 <!-- ═══════════════════════════════════ LIGHTBOX -->
@@ -1528,8 +1510,6 @@
 <!-- ═══════════════════════════════════ FOOTER -->
 <footer>
     <div class="footer-rule"></div>
-    <a href="https://isabelledutoit.com" target="_blank" rel="noopener">isabelledutoit.com</a>
-    <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener">View the full Requiem series &rarr;</a>
     <a href="https://isabelledutoit.vercel.app/" target="_blank" rel="noopener" class="footer-qr" aria-label="QR code to share this site">
         <img src="public/isabelledutoit_qr.png" alt="" loading="lazy">
         <p class="footer-qr-caption">Scan to share</p>
@@ -1544,6 +1524,8 @@
             github.com/isabelledutoit/requiem
         </a>
     </div>
+    <a href="https://isabelledutoit.com" target="_blank" rel="noopener">isabelledutoit.com</a>
+    <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener">View the full Requiem series &rarr;</a>
     <p class="footer-copy">&copy; 2026 <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener">Isabelle du Toit</a> &nbsp;·&nbsp; All rights reserved</p>
     <p class="footer-credit">Built by AI &nbsp;·&nbsp; Steered by <a href="https://dreamforgeworld.com" target="_blank" rel="noopener">Emile du Toit</a> (Collaborator)</p>
 </footer>
@@ -1961,8 +1943,8 @@ function runTokenizer(word) {
             <p class="phase-caption" style="margin-top:1.4rem">
                 The word becomes a point in 1536-dimensional space.
                 Similar words cluster close together.
-                <strong style="color:var(--bone)">"Greed" and "Cruelty" are near neighbours.</strong>
-                <strong style="color:var(--bone)">"Death" floats further than you'd expect.</strong>
+                Example: "Greed" and "Cruelty" are near neighbours.
+                "Death" floats further than you'd expect.
             </p>`;
         stage.appendChild(p3);
         requestAnimationFrame(() => p3.classList.add('show'));
