@@ -1568,13 +1568,14 @@
     const ctx = canvas.getContext('2d');
 
     const COLORS = [
-        [196, 30, 30],   // blood bright
         [168, 24, 24],   // blood mid
         [138, 20, 20],   // blood
         [130, 130, 135], // silver
         [105, 105, 110], // silver dim
         [85,  85,  90],  // silver dark
     ];
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let balls = [];
 
@@ -1589,8 +1590,8 @@
         for (let i = 0; i < N; i++) {
             const r    = 5 + Math.random() * 14;
             const c    = COLORS[Math.floor(Math.random() * COLORS.length)];
-            const a    = 0.25 + Math.random() * 0.35;
-            const spd  = 0.12 + Math.random() * 0.18;
+            const a    = 0.10 + Math.random() * 0.20;
+            const spd  = reducedMotion ? 0 : (0.05 + Math.random() * 0.09);
             const ang  = Math.random() * Math.PI * 2;
             balls.push({
                 x: r + Math.random() * (canvas.width  - r * 2),
@@ -1627,7 +1628,7 @@
                 const dx = a.x - b.x, dy = a.y - b.y;
                 const d = Math.sqrt(dx * dx + dy * dy);
                 if (d < LINK_DIST) {
-                    const alpha = (1 - d / LINK_DIST) * 0.8;
+                    const alpha = (1 - d / LINK_DIST) * 0.3;
                     ctx.strokeStyle = `rgba(140, 140, 145, ${alpha})`;
                     ctx.beginPath();
                     ctx.moveTo(a.x, a.y);
@@ -1648,11 +1649,11 @@
             ctx.restore();
         }
 
-        requestAnimationFrame(tick);
+        if (!reducedMotion) requestAnimationFrame(tick);
     }
 
     resize(); init(); tick();
-    window.addEventListener('resize', () => { resize(); init(); });
+    window.addEventListener('resize', () => { resize(); init(); tick(); });
 })();
 
 
