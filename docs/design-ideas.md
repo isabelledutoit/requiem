@@ -24,8 +24,7 @@ Greed · Apathy · Selfishness · Manipulation · Oppression · Deception · Dea
 
 ## Image Notes
 
-- Featured work: **Mentes Extractae** — `public/artworks/MentesFull.jpg` plus three detail crops (`MentesDetail1.jpg`, `MentesDetail2.jpg`, `MentesDetail3.jpg`)
-- Slideshow shows the full painting first, then details across slides 2–4
+- Featured work: **Mentes Extractae** — `public/artworks/MentesFull.jpg` is the slide-1 full painting; slides 2–8 each show a detail named after the cipher token painted into the work (`34012.jpg`, `22345.jpg`, `19234.jpg`, `38659.jpg`, `12670.jpg`, `12896.jpg`, `8716.jpg`).
 - All images link back to isabelledutoit.com/requiem
 
 ## Page Structure
