@@ -2027,29 +2027,19 @@ document.getElementById('custom-word').addEventListener('keydown', e => {
     if (e.key === 'Enter') document.getElementById('dissect-btn').click();
 });
 
-/* slide cipher clicks — decode painting, then scroll to tokenizer.
-   Anchor variants (.slide-cipher-cta) opt out so the browser handles
-   the #tokenizer anchor scroll natively. */
+/* Slide cipher clicks — reveal the word in place and let the user
+   keep browsing. To jump to the tokenizer, slide 1's 'Decode the
+   Cipher' anchor handles that path. */
 document.querySelectorAll('button.slide-cipher-btn').forEach(btn => {
     btn.addEventListener('click', function () {
+        if (this.classList.contains('revealed')) return;
         const word = this.dataset.word;
-
-        /* 1. reveal on the slide if first click */
-        if (!this.classList.contains('revealed')) {
-            this.style.opacity = '0';
-            setTimeout(() => {
-                this.textContent = word;
-                this.classList.add('revealed');
-                this.style.opacity = '1';
-            }, 220);
-        }
-
-        /* 2. after reveal, pull the viewer into the tokenizer */
+        this.style.opacity = '0';
         setTimeout(() => {
-            document.getElementById('tokenizer').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            const pill = document.querySelector(`.word-pills .pill[data-word="${word}"]`);
-            setTimeout(() => { if (pill) pill.click(); }, 700);
-        }, 950);
+            this.textContent = word;
+            this.classList.add('revealed');
+            this.style.opacity = '1';
+        }, 220);
     });
 });
 </script>
