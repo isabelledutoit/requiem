@@ -378,6 +378,11 @@
             border-color: var(--blood-bright);
         }
 
+        a.slide-cipher-btn {
+            display: inline-block;
+            text-decoration: none;
+        }
+
         .slide-link:hover {
             color: var(--bone);
             border-color: var(--blood-bright);
@@ -1262,8 +1267,7 @@
                 into a web-linked record. Matter and memory, bound across two worlds.
             </p>
             <div class="slide-cipher">
-                <span class="slide-cipher-label">Token on this work</span>
-                <button type="button" class="slide-cipher-btn" data-word="Death" data-mask="#27891">#27891</button>
+                <a href="#tokenizer" class="slide-cipher-btn slide-cipher-cta">Decode the Cipher &rarr;</a>
             </div>
             <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
                 View in Gallery &rarr;
@@ -1418,6 +1422,28 @@
         </div>
     </div>
 
+    <div class="slide">
+        <div class="slide-art">
+            <img src="public/artworks/27891.jpg" alt="Mentes Extractae (detail) — Isabelle du Toit" loading="lazy">
+        </div>
+        <div class="slide-info">
+            <div class="slide-num">09 — Requiem</div>
+            <h2 class="slide-title">Mentes Extractae</h2>
+            <p class="slide-desc">
+                A hybrid post-digital work: pigment, cipher, and archive entwined.
+                The painted surface carries an inscribed token; the token opens
+                into a web-linked record. Matter and memory, bound across two worlds.
+            </p>
+            <div class="slide-cipher">
+                <span class="slide-cipher-label">Token on this work</span>
+                <button type="button" class="slide-cipher-btn" data-word="Death" data-mask="#27891">#27891</button>
+            </div>
+            <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
+                View in Gallery &rarr;
+            </a>
+        </div>
+    </div>
+
     <div class="slide-nav">
         <button type="button" class="slide-arrow" id="prev-btn" aria-label="Previous">&#8592;</button>
         <div class="slide-dots">
@@ -1429,6 +1455,7 @@
             <div class="slide-dot" data-idx="5"></div>
             <div class="slide-dot" data-idx="6"></div>
             <div class="slide-dot" data-idx="7"></div>
+            <div class="slide-dot" data-idx="8"></div>
         </div>
         <button type="button" class="slide-arrow" id="next-btn" aria-label="Next">&#8594;</button>
         <button type="button" class="slide-arrow" id="pause-btn" aria-label="Play slideshow" title="Play">
@@ -1998,8 +2025,10 @@ document.getElementById('custom-word').addEventListener('keydown', e => {
     if (e.key === 'Enter') document.getElementById('dissect-btn').click();
 });
 
-/* slide cipher clicks — decode painting, then scroll to tokenizer */
-document.querySelectorAll('.slide-cipher-btn').forEach(btn => {
+/* slide cipher clicks — decode painting, then scroll to tokenizer.
+   Anchor variants (.slide-cipher-cta) opt out so the browser handles
+   the #tokenizer anchor scroll natively. */
+document.querySelectorAll('button.slide-cipher-btn').forEach(btn => {
     btn.addEventListener('click', function () {
         const word = this.dataset.word;
 
