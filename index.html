@@ -1043,7 +1043,14 @@
 
         /* phone-class viewports — shrink hero typography & tokenizer */
         @media (max-width: 900px) {
-            #hero { padding: 12vh 1.25rem 2rem; }
+            /* Allow hero to grow past the viewport so the longer copy can
+               never be clipped by the next section's background. The
+               scroll-hint stays pinned to the bottom via margin-top:auto. */
+            #hero {
+                height: auto;
+                min-height: 100dvh;
+                padding: 8vh 1.25rem 2rem;
+            }
             .hero-byline {
                 font-size: 1.35rem;
                 letter-spacing: 0.22em;
@@ -1057,10 +1064,10 @@
             }
             .hero-sub {
                 margin-top: 1.2rem;
-                max-width: 32ch;
+                max-width: 34ch;
                 font-size: 0.78rem;
-                line-height: 1.65;
-                letter-spacing: 0.16em;
+                line-height: 1.6;
+                letter-spacing: 0.14em;
             }
 
             #tokenizer { padding: 2rem 1.25rem 0; }
