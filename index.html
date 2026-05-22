@@ -141,11 +141,6 @@
             gap: 0.6rem;
         }
 
-        /* Tablet & touch — let entire painting show; hide cipher hover state */
-        @media (max-width: 1024px), (hover: none) and (pointer: coarse) {
-            .slide-art img { object-fit: contain; }
-        }
-
         .scroll-hint span {
             font-size: 0.78rem;
             letter-spacing: 0.4em;
@@ -228,7 +223,7 @@
         .slide-art img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
             display: block;
             box-sizing: border-box;
@@ -929,13 +924,13 @@
 
         /* ── AUDIO TOGGLE ── */
         #audio-toggle {
+            display: none !important;
             position: fixed;
             bottom: 1.5rem;
             right: 1.5rem;
             z-index: 50;
             width: 40px;
             height: 40px;
-            display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
@@ -1247,7 +1242,7 @@
     <div class="hero-byline">Isabelle du Toit</div>
     <div class="hero-kicker">REQUIEM SERIES</div>
     <h1 class="hero-title">Mentes Extractae</h1>
-    <p class="hero-sub">Mentes Extractae is a hybrid post digital artwork combining oil painting, symbolic ciphers, and web linked systems. I view trees as witnesses to human cruelty and failings. Through driftwood, brain fragments, and AI vectors, the work questions authorship and consciousness.</p>
+    <p class="hero-sub">Mentes Extractae is a hybrid post digital artwork combining oil painting, symbolic ciphers, and web linked systems. I view trees as witnesses to human cruelty and failings. Through driftwood, brain fragments, and AI vectors, the work questions the harvesting of human knowledge and creativity without consent.</p>
     <div class="scroll-hint">
         <span>Scroll</span>
         <svg class="scroll-mouse" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
@@ -1263,7 +1258,7 @@
 
     <div class="slide active">
         <div class="slide-art">
-            <img src="public/artworks/MentesFull-md.jpg" alt="Mentes Extractae — Isabelle du Toit" loading="lazy">
+            <img src="public/artworks/MentesFullFinal.jpg" alt="Mentes Extractae — Isabelle du Toit" loading="lazy">
         </div>
         <div class="slide-info">
             <div class="slide-num">01</div>
@@ -1274,9 +1269,6 @@
             <div class="slide-cipher">
                 <a href="#tokenizer" class="slide-cipher-btn slide-cipher-cta">Decode the Cipher &rarr;</a>
             </div>
-            <a href="https://isabelledutoit.com/requiem" target="_blank" rel="noopener" class="slide-link">
-                View Full Requiem Series &rarr;
-            </a>
         </div>
     </div>
 
@@ -1634,7 +1626,7 @@
             const r    = 5 + Math.random() * 14;
             const c    = COLORS[Math.floor(Math.random() * COLORS.length)];
             const a    = 0.10 + Math.random() * 0.20;
-            const spd  = reducedMotion ? 0 : (0.05 + Math.random() * 0.09);
+            const spd  = reducedMotion ? 0 : 0.015;
             const ang  = Math.random() * Math.PI * 2;
             balls.push({
                 x: r + Math.random() * (w - r * 2),
@@ -1649,16 +1641,24 @@
     }
 
     const LINK_DIST = 180;
+    const FRAME_REF_MS = 1000 / 60;
+    let lastTime = performance.now();
 
-    function tick() {
+    function tick(now) {
+        now = now || performance.now();
+        /* delta-time scaling so 120Hz iPad ProMotion doesn't run 2x faster;
+           cap at 3 frames to avoid jumps when the tab returns from background */
+        const dt = Math.min((now - lastTime) / FRAME_REF_MS, 3);
+        lastTime = now;
+
         const w = window.innerWidth;
         const h = window.innerHeight;
         ctx.clearRect(0, 0, w, h);
 
         /* move + wall bounce */
         for (const b of balls) {
-            b.x += b.vx;
-            b.y += b.vy;
+            b.x += b.vx * dt;
+            b.y += b.vy * dt;
             if (b.x - b.r < 0)         { b.x = b.r;       b.vx *= -1; }
             if (b.x + b.r > w)         { b.x = w - b.r;   b.vx *= -1; }
             if (b.y - b.r < 0)         { b.y = b.r;       b.vy *= -1; }
